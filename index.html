@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vår dag</title>
+	<script type="text/javascript">
+		var start = Date.now();
+	</script>
+
+	<link rel="icon" href="Mouse-icon.png">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel="stylesheet">
+
+	<script type="text/javascript">
+
+	var date1 = new Date(2017,3,20,11,23);
+	var date2 = new Date();
+	var temp1 = date1.getTime() / 1000; 
+	var temp2 = date2.getTime() / 1000;
+
+	temp1 = Math.ceil(temp1);
+	temp2 = Math.ceil(temp2);
+
+	var seconds = 0;
+	var minutes = 0;
+	var hours = 0;
+	var days = 0;
+	var weeks = 0;
+	var months = 0;
+	var years = 0;
+
+	function repeat(){
+		if (temp1 < temp2){
+			temp1++;
+			seconds++;
+			}
+
+		var newDate = new Date(temp1 * 1000);
+
+		var newMonth = newDate.getMonth();
+
+	function daysInMonth(month,year) {
+	    return new Date(year, month, 0).getDate();
+		}
+
+	var m = daysInMonth(newMonth,2017);
+
+	if(seconds >= 60){
+		seconds = 0;
+		minutes++;
+		}
+		if(minutes >= 60){
+			minutes = 0;
+			hours++;}
+			if(hours >= 24){
+				hours = 0;
+				days++;}
+				if (days >= m){
+					days = 0;
+					months++;}
+					
+				
+			
+		
+	}
+
+	var timeDiff = Math.abs(date2.getTime() - date1.getTime());
+	var timeDiff = timeDiff/1000;
+
+	for (var i = 0; i <= timeDiff; i++) {
+		repeat();
+	}
+</script>
+
+
+</head>
+<body>
+	<div class="wrapper">
+		<div>
+			<ul>
+				<li>Years: <span id="years"></span></li>
+				<li>Months: <span id="months"></span></li>
+				<li>Days: <span id="days"></span></li>
+				<li>Hours: <span id="hours"></span></li>
+				<li>Minutes: <span id="minutes"></span></li>
+				<li>Seconds: <span  id="seconds"></span></li>
+			</ul>	
+		</div>
+	</div>
+
+
+<script type="text/javascript">
+	var timeTook = (Date.now() - start)/1000;
+	seconds = seconds + timeTook;
+	seconds = Math.ceil(seconds);
+	var myVar = setInterval(add, 1000);
+function add(){
+	seconds++;
+	if(seconds >= 60){
+		seconds = 0;
+		minutes++;
+			if(minutes >= 60){
+				minutes = 0;
+				hours++;
+					if(hours >= 24){
+					hours = 0;
+					days++;
+						if (days >= m){
+						days = 0;
+						months++;
+						}if(month > 24){
+							months = 0;
+							years++;
+						}
+					}
+				}
+			}
+			
+			if (seconds<10) {
+				document.getElementById("seconds").innerHTML = "0" + seconds;
+			}else{
+				document.getElementById("seconds").innerHTML = seconds;
+			}
+			if (minutes<10) {
+				document.getElementById("minutes").innerHTML = "0" + minutes;
+			}else{
+				document.getElementById("minutes").innerHTML = minutes;
+			}
+			document.getElementById("hours").innerHTML = hours;
+			document.getElementById("days").innerHTML = days;
+			document.getElementById("months").innerHTML = months;
+			document.getElementById("years").innerHTML = years;
+}
+		
+</script>
+
+</body>
+</html>
