@@ -14,11 +14,8 @@
 
 	var date1 = new Date(2017,3,20,11,23);
 	var date2 = new Date();
-	var temp1 = date1.getTime() / 1000; 
-	var temp2 = date2.getTime() / 1000;
-
-	temp1 = Math.ceil(temp1);
-	temp2 = Math.ceil(temp2);
+	var temp1 = (date1.getTime()/1000) / 60; //Our date - minutes from 1970
+	var temp2 = (date2.getTime()/1000) / 60; //Date now - minutes from 1970
 
 	var seconds = 0;
 	var minutes = 0;
@@ -31,23 +28,19 @@
 	function repeat(){
 		if (temp1 < temp2){
 			temp1++;
-			seconds++;
+			minutes++;
 			}
 
-		var newDate = new Date(temp1 * 1000);
-
+		var newDate = new Date(temp1 * 60000);
 		var newMonth = newDate.getMonth();
+		var newYear = newDate.getYear();
 
 	function daysInMonth(month,year) {
 	    return new Date(year, month, 0).getDate();
 		}
 
-	var m = daysInMonth(newMonth,2017);
+	var m = daysInMonth(newMonth,newYear);
 
-	if(seconds >= 60){
-		seconds = 0;
-		minutes++;
-		}
 		if(minutes >= 60){
 			minutes = 0;
 			hours++;}
@@ -57,18 +50,26 @@
 				if (days >= m){
 					days = 0;
 					months++;}
-					
-				
-			
-		
 	}
 
 	var timeDiff = Math.abs(date2.getTime() - date1.getTime());
-	var timeDiff = timeDiff/1000;
+	var timeDiff = (timeDiff/1000)/60;
 
-	for (var i = 0; i <= timeDiff; i++) {
+	for (var i = 0; i < timeDiff; i++) {
 		repeat();
 	}
+
+	seconds = (60-Math.ceil((temp1 - temp2) * 60));
+
+	minutes--;
+
+	document.write(temp1 + " " + temp2 + "<br />");
+	document.write(temp1 - temp2 + "<br />");
+
+	document.write(60-Math.ceil((temp1 - temp2) * 60));
+
+
+
 </script>
 
 
