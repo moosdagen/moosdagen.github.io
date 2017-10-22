@@ -12,61 +12,61 @@
 
 	<script type="text/javascript">
 
-	var date1 = new Date(2017,3,20,11,23);
-	var date2 = new Date();
-	var temp1 = (date1.getTime()/1000) / 60; //Our date - minutes from 1970
-	var temp2 = (date2.getTime()/1000) / 60; //Date now - minutes from 1970
+	// var date1 = new Date(2017,3,20,11,23);
+	// var date2 = new Date();
+	// var temp1 = (date1.getTime()/1000) / 60; //Our date - minutes from 1970
+	// var temp2 = (date2.getTime()/1000) / 60; //Date now - minutes from 1970
 
-	var seconds = 0;
-	var minutes = 0;
-	var hours = 0;
-	var days = 0;
-	var weeks = 0;
-	var months = 0;
-	var years = 0;
+	// var seconds = 0;
+	// var minutes = 0;
+	// var hours = 0;
+	// var days = 0;
+	// var weeks = 0;
+	// var months = 0;
+	// var years = 0;
 
-	function repeat(){
-		if (temp1 < temp2){
-			temp1++;
-			minutes++;
-			}
+	// function repeat(){
+	// 	if (temp1 < temp2){
+	// 		temp1++;
+	// 		minutes++;
+	// 		}
 
-		var newDate = new Date(temp1 * 60000);
-		var newMonth = newDate.getMonth();
-		var newYear = newDate.getYear();
+	// 	var newDate = new Date(temp1 * 60000);
+	// 	var newMonth = newDate.getMonth();
+	// 	var newYear = newDate.getYear();
 
-	function daysInMonth(month,year) {
-	    return new Date(year, month, 0).getDate();
-		}
+	// function daysInMonth(month,year) {
+	//     return new Date(year, month, 0).getDate();
+	// 	}
 
-	var m = daysInMonth(newMonth,newYear);
+	// var m = daysInMonth(newMonth,newYear);
 
-		if(minutes >= 60){
-			minutes = 0;
-			hours++;}
-			if(hours >= 24){
-				hours = 0;
-				days++;}
-				if (days >= m){
-					days = 0;
-					months++;}
-	}
+	// 	if(minutes >= 60){
+	// 		minutes = 0;
+	// 		hours++;}
+	// 		if(hours >= 24){
+	// 			hours = 0;
+	// 			days++;}
+	// 			if (days >= m){
+	// 				days = 0;
+	// 				months++;}
+	// }
 
-	var timeDiff = Math.abs(date2.getTime() - date1.getTime());
-	var timeDiff = (timeDiff/1000)/60;
+	// var timeDiff = Math.abs(date2.getTime() - date1.getTime());
+	// var timeDiff = (timeDiff/1000)/60;
 
-	for (var i = 0; i < timeDiff; i++) {
-		repeat();
-	}
+	// for (var i = 0; i < timeDiff; i++) {
+	// 	repeat();
+	// }
 
-	seconds = (60-Math.ceil((temp1 - temp2) * 60));
+	// seconds = (60-Math.ceil((temp1 - temp2) * 60));
 
-	minutes--;
+	// minutes--;
 
-	// document.write(temp1 + " " + temp2 + "<br />");
-	// document.write(temp1 - temp2 + "<br />");
+	// // document.write(temp1 + " " + temp2 + "<br />");
+	// // document.write(temp1 - temp2 + "<br />");
 
-	// document.write(60-Math.ceil((temp1 - temp2) * 60));
+	// // document.write(60-Math.ceil((temp1 - temp2) * 60));
 
 
 
@@ -82,7 +82,7 @@
 	</div>
 
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 	var timeTook = (Date.now() - start)/1000;
 	seconds = seconds + timeTook;
 	seconds = Math.ceil(seconds);
@@ -125,7 +125,7 @@ function add(){
 			document.getElementById("years").innerHTML = years;
 }
 		
-</script>
+</script> -->
 
 </body>
 </html>
