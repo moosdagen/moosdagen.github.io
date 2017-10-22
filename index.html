@@ -63,10 +63,10 @@
 
 	minutes--;
 
-	document.write(temp1 + " " + temp2 + "<br />");
-	document.write(temp1 - temp2 + "<br />");
+	// document.write(temp1 + " " + temp2 + "<br />");
+	// document.write(temp1 - temp2 + "<br />");
 
-	document.write(60-Math.ceil((temp1 - temp2) * 60));
+	// document.write(60-Math.ceil((temp1 - temp2) * 60));
 
 
 
@@ -75,16 +75,11 @@
 
 </head>
 <body>
-	<div class="wrapper">
+	<div class="wrapper" id="wrapper">
 		<div>
-			<ul>
-				<li>Years: <span id="years"></span></li>
-				<li>Months: <span id="months"></span></li>
-				<li>Days: <span id="days"></span></li>
-				<li>Hours: <span id="hours"></span></li>
-				<li>Minutes: <span id="minutes"></span></li>
-				<li>Seconds: <span  id="seconds"></span></li>
-			</ul>	
+			<p>Är jag fortfarande din moos?</p>
+			<button onclick="yes();">Ja</button>
+			<button onclick="no();">Nej</button>
 		</div>
 	</div>
 
@@ -131,7 +126,15 @@ function add(){
 			document.getElementById("months").innerHTML = months;
 			document.getElementById("years").innerHTML = years;
 }
-		
+		function yes(){
+			document.getElementById("wrapper").innerHTML = "Jag kan inte prata med dig när du tittar bort<br>snälla ge mig två sekunder innan du ger upp<br>kan vi inte vara nära bara en minut<br>är det nu, nu som det tar slut?<br>Fast du inte lyssnar vet jag att du hör ändå<br>jag vill hinna säga allting innan jag ska gå<br>älskling, vänta får jag bara sitta bredvid dig <br> det var han som ville kyssa mig<br><br>Snälla bli min igen <br>nej, låt det va som i en film <br>snälla bli min igen <br>låt mig va kvar <br>ja, låt det va'<br><br>Du tar bort min hand ifrån din arm<br>och flyttar bort <br>ingenting jag säger spelar längre någon roll<br>ställer mig i hallen tills jag fattar vad som hänt<br>får jag ens ha kvar dig som min vän?<br>knyter mina skor och går tillbaka in igen<br>sitter här på sängen tills du be mig att gå hem<br>letar efter nåt att säga som kan ändra allt<br>nåt mer än det jag redan sagt<br><br>Snälla bli min igen<br>nej, låt det va som i en film<br>snälla bli min igen<br>låt mig va kvar<br>ja, låt det va<br><br> Snälla bli min igen. Snälla ring mig. Jag älskar dig.";
+
+			document.getElementById("wrapper").style.top = "100px";
+		}
+
+		function no(){
+			alert("Alternativet inte i bruk. Var god kontakta kundtjänst: 0723299799 eller välj annat alternativ.")
+		}
 </script>
 
 </body>
