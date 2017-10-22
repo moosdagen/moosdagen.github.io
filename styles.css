@@ -30,7 +30,6 @@ div{
 
 div.wrapper{
 	top: 45%;
-	height: 100%;
 	width: 50%;
 	margin-left: 25%;
 
@@ -49,9 +48,8 @@ li{
 	list-style: none;
 	padding: 0 12px;
 	font-size: 25px;
-	font-weight: 200;
+	font-weight: 300;
 	letter-spacing: 1.5px;
-	color: white;
 	opacity: 0.9;
 }
 
